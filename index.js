@@ -1,3 +1,4 @@
+#!/usr/bin/env node
 const compiler = require('vue-template-compiler');
 const prettier = require('prettier');
 const csstree = require('css-tree');
@@ -455,3 +456,5 @@ if (sfc.template) {
 }
 
 fs.writeFileSync(outputPath, output.join(''), 'utf8');
+
+console.log(chalk`{greenBright Successfully converted} {yellow ${inputPath}} {greenBright to} {yellow ${outputPath}}{greenBright . Please note that some manual corrections are probably still required.}`);

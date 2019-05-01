@@ -30,5 +30,8 @@
     "css-tree": "^1.0.0-alpha.29",
     "prettier": "^1.17.0",
     "vue-template-compiler": "^2.6.10"
+  },
+  "bin": {
+    "svuelte": "./index.js"
   }
 }
