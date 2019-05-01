@@ -82,7 +82,9 @@ As you can see already, Svuelte does not cover all features of Vue. In particula
 * For now, Svuelte will **silently** ignore all references to special fields and methods available on Vue component instances (they start with a "$", like `$set`, `$slots` and so on)
 * Directives `v-text`, `v-show`, `v-slot`, `v-pre`, `v-cloak`, `v-once` are **silently** ignored too (for now). Same applies for "special attributes" `key`, `ref` and `is`
 * Vue built-in helper components (like `<component>`, `<keep-alive>`, `<transition>`) are not converted and left as-is
-* Except for those mentioned above, none of the component options are supported (including `render`, `watch`, `updated`, `activated`, `deactivated` and so on). Svuelte will report each field it was unable to convert.
+* Except for those mentioned above, none of the component options are supported (including `render`, `watch`, `updated`, `activated`, `deactivated` and so on). Svuelte will report each field it was unable to convert
+* Svuelte does not support validation on component properties, unlike Vue. Because of that, the type of the property will be left only as a comment after its declaration. If your component contained custom validators, they will be discarded and Svuelte will warn you about that
+* Computed fields with setters are not supported for now
 
 Also Svuelte won't perform any improvements/optimisations on your code (except for the trivial ones, like removing `this`). Some parts are probably will be possible to rewrite in a more elegant way (computed fields, for example).
 
