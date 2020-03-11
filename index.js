@@ -311,14 +311,14 @@ if (sfc.script) {
           break;
         case 'beforeCreate':
           if (prop.type !== 'ObjectMethod') {
-            console.log(chalk`{yellow Warning: in default export, } {greenBright ${prop.key.name}} is not a function, ignoring it.}`);
+            console.log(chalk`{yellow Warning: in default export, {greenBright ${prop.key.name}} is not a function, ignoring it.}`);
             continue;
           }
           beforeCreate = unwrapFunctionBody(prop);
           break;
         case 'created':
           if (prop.type !== 'ObjectMethod') {
-            console.log(chalk`{yellow Warning: in default export, } {greenBright ${prop.key.name}} is not a function, ignoring it.}`);
+            console.log(chalk`{yellow Warning: in default export, {greenBright ${prop.key.name}} is not a function, ignoring it.}`);
             continue;
           }
           created = unwrapFunctionBody(prop);
@@ -328,7 +328,7 @@ if (sfc.script) {
         case 'updated':
         case 'destroyed':
           if (prop.type !== 'ObjectMethod') {
-            console.log(chalk`{yellow Warning: in default export, } {greenBright ${prop.key.name}} is not a function, ignoring it.}`);
+            console.log(chalk`{yellow Warning: in default export, {greenBright ${prop.key.name}} is not a function, ignoring it.}`);
             continue;
           }
 
@@ -394,7 +394,7 @@ if (sfc.script) {
 
           for (let method of prop.value.properties) {
             if (method.type !== 'ObjectMethod') {
-              console.log(chalk`{yellow Warning: in default export, method} {greenBright ${babelGenerator(method.key).code}} is not a function, ignoring it.}`);
+              console.log(chalk`{yellow Warning: in default export, method {greenBright ${babelGenerator(method.key).code}} is not a function, ignoring it.}`);
               continue;
             }
 
